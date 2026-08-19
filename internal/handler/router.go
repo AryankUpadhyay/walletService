@@ -26,7 +26,7 @@ func NewRouter(h *WalletHandler) *chi.Mux {
 
 	// Wallet routes
 	r.Route("/wallets", func(r chi.Router) {
-		r.Post("/create-id", h.CreateWallet)
+		r.Post("/", h.CreateWallet)
 
 		r.Route("/{id}", func(r chi.Router) {
 			r.Post("/topup", h.TopUp)
